@@ -34,7 +34,7 @@
 
     <nav class="desktop-nav" aria-label="Principal">
       <button class="nav-link" type="button" data-open-menu>Menú</button>
-      <a class="nav-link" href="#hero">Promos</a>
+      <a class="nav-link" href="#hero" data-open-promotions>Promos</a>
       <a
         class="nav-link"
         href="https://maps.app.goo.gl/m6b3sNcMyiEgnKMXA"
@@ -59,7 +59,7 @@
 
   <nav class="mobile-nav" id="mobileNav" aria-label="Menú móvil">
     <button class="mobile-link" type="button" data-open-menu>Menú</button>
-    <a class="mobile-link" href="#hero">Promos</a>
+    <a class="mobile-link" href="#hero" data-open-promotions>Promos</a>
     <a
       class="mobile-link"
       href="https://maps.google.com/?q=Tu+Negocio+QArepotas"
@@ -94,14 +94,9 @@
       </p>
 
       <div class="cta-row">
-        <a
-          class="btn btn-solid"
-          href="https://wa.me/573044247299?text=Hola%20QArepotas,%20quiero%20hacer%20un%20pedido."
-          target="_blank"
-          rel="noreferrer"
-        >
-          Pide ahora
-        </a>
+        <button class="btn btn-solid" type="button" data-open-promotions>
+          Promociones
+        </button>
 
         <button class="btn btn-soft" type="button" data-open-menu>
           Ver menú
@@ -176,72 +171,198 @@
         ×
       </button>
 
-      <h2 id="menuTitle">Menú rápido</h2>
+      <h2 id="menuTitle">Menú completo</h2>
       <p class="modal-subtitle">
-        Productos de ejemplo para que tu landing siga siendo de una sola pantalla.
+        Aquí están todos los productos disponibles. Desplázate si necesitas ver más opciones.
       </p>
+
+      <div class="menu-summary" id="menuSummary">
+        <div class="menu-summary-head">
+          <div>
+            <strong id="menuSelectionCount">0 productos seleccionados</strong>
+            <p class="menu-summary-note">Ajusta cantidades con + y -.</p>
+          </div>
+          <span class="menu-summary-total" id="menuTotal">$0</span>
+        </div>
+
+        <div class="menu-summary-fields">
+          <label class="menu-field" for="customerName">
+            <span>Nombre del cliente</span>
+            <input
+              id="customerName"
+              type="text"
+              name="customerName"
+              placeholder="Escribe tu nombre"
+              autocomplete="name"
+            />
+          </label>
+
+          <label class="menu-field" for="customerAddress">
+            <span>Dirección</span>
+            <input
+              id="customerAddress"
+              type="text"
+              name="customerAddress"
+              placeholder="Escribe tu dirección"
+              autocomplete="street-address"
+            />
+          </label>
+
+          <label class="menu-field" for="paymentMethod">
+            <span>Forma de pago</span>
+            <select id="paymentMethod" name="paymentMethod">
+              <option value="" selected disabled>Selecciona una opción</option>
+              <option value="Transferencia">Transferencia</option>
+              <option value="Efectivo">Efectivo</option>
+            </select>
+          </label>
+
+          <label class="menu-field is-hidden" for="cashPreference" id="cashPreferenceField">
+            <span>Si pagas en efectivo</span>
+            <select id="cashPreference" name="cashPreference" disabled>
+              <option value="" selected disabled>¿Necesitas devuelta?</option>
+              <option value="Necesito devuelta">Necesito devuelta</option>
+              <option value="Pago completo">Pago completo</option>
+            </select>
+          </label>
+        </div>
+
+        <p class="menu-summary-helper">Completa tu nombre, dirección y forma de pago. Si eliges efectivo, dinos si necesitas devuelta o pago completo.</p>
+
+        <div class="menu-summary-list" id="menuSummaryList" aria-live="polite" aria-atomic="true">
+          <p class="menu-empty">TodavÃ­a no has agregado productos.</p>
+        </div>
+
+        <button class="btn btn-solid full-width" id="whatsappOrderBtn" type="button" disabled>
+          Pedir por WhatsApp
+        </button>
+      </div>
 
       <div class="menu-grid">
         <article class="menu-item">
+          <img class="menu-thumb" src="./images/Desgranado De Pollo.jpeg" alt="Desgranado de Pollo" loading="lazy" decoding="async" />
           <h3>Desgranado de Pollo</h3>
           <p>Chuzo de pollo picado, maíz, queso, tocineta, papa ripio y salsas.</p>
           <strong>$20.000</strong>
         </article>
 
         <article class="menu-item">
+          <img class="menu-thumb" src="./images/Burritos.jpeg" alt="Burrito delicioso" loading="lazy" decoding="async" />
           <h3>Burrito</h3>
           <p>Carne, pollo, tocineta, maicitos, hogado, queso y salsas.</p>
           <strong>$20.000</strong>
         </article>
 
         <article class="menu-item">
+          <img class="menu-thumb" src="./images/arepa rellena.jpeg" alt="Arepa rellena" loading="lazy" decoding="async" />
           <h3>Arepa Rellena</h3>
           <p>Carne y pollo desmenuzado, queso, maíz, tocineta, mantequilla y salsas.</p>
           <strong>$18.000</strong>
         </article>
 
         <article class="menu-item">
+          <img class="menu-thumb" src="./images/quesadillas.jpeg" alt="Quesadillas" loading="lazy" decoding="async" />
           <h3>Quesadillas</h3>
           <p>Queso fresco, carne, pollo, tocineta y salsas.</p>
           <strong>$20.000</strong>
         </article>
 
         <article class="menu-item">
+          <img class="menu-thumb" src="./images/maicitos gratinaados.jpeg" alt="Maicitos Gratinados" loading="lazy" decoding="async" />
           <h3>Maicitos Gratinados</h3>
           <p>Maíz tierno con queso, tocino crujiente y salsa especial.</p>
           <strong>$18.000</strong>
         </article>
 
         <article class="menu-item">
+          <img class="menu-thumb" src="./images/perro caliente.jpeg" alt="Perro Caliente" loading="lazy" decoding="async" />
           <h3>Perro Caliente</h3>
           <p>Pan, salchicha, queso, papa ripio, salsas y complementos.</p>
           <strong>$12.000</strong>
         </article>
 
         <article class="menu-item">
+          <img class="menu-thumb" src="./images/chuzo.jpeg" alt="Chuzo" loading="lazy" decoding="async" />
           <h3>Chuzo</h3>
           <p>Carne y pollo ensartados, maíz, queso, salsa verde y roja.</p>
           <strong>$17.000</strong>
         </article>
 
         <article class="menu-item">
+          <img class="menu-thumb" src="./images/hamburguesa.jpeg" alt="Hamburguesa" loading="lazy" decoding="async" />
           <h3>Hamburguesa</h3>
           <p>Carne, queso, tocineta, ensalada hawaiana, papa ripio y salsas.</p>
           <strong>$12.000</strong>
         </article>
       </div>
 
-      <a
-        class="btn btn-solid full-width"
-        href="https://wa.me/573044247299?text=Hola%20QArepotas,%20quiero%20pedir%20del%20men%C3%BA."
-        target="_blank"
-        rel="noreferrer"
-      >
-        Pedir por WhatsApp
-      </a>
+    </section>
+  </div>
+
+  <div class="promotions-modal hidden" id="promotionsModal" aria-hidden="true">
+    <div class="promotions-modal-backdrop" id="promotionsBackdrop"></div>
+
+    <section class="promotions-modal-card" role="dialog" aria-modal="true" aria-labelledby="promotionsTitle">
+      <button class="modal-close" id="closePromotionsModal" type="button" aria-label="Cerrar promociones">
+        ×
+      </button>
+
+      <h2 id="promotionsTitle">Promociones</h2>
+      <p class="modal-subtitle">
+        Aquí puedes ver las promociones activas del momento.
+      </p>
+
+      <div class="promotions-grid" id="promotionsList" aria-live="polite" aria-atomic="true"></div>
+
+      <section class="promotions-admin is-hidden" id="promotionsAdminPanel">
+        <div class="promotions-admin-head">
+          <div>
+            <strong>Modo administrador</strong>
+            <p>Solo tú puedes ver este formulario para agregar nuevas promociones.</p>
+          </div>
+          <span class="promotions-admin-badge">Oculto</span>
+        </div>
+
+        <form class="promotion-form" id="promotionForm">
+          <label class="menu-field promotion-field promotion-title-field" for="promotionTitle">
+            <span>Título</span>
+            <input id="promotionTitle" type="text" name="promotionTitle" placeholder="Ejemplo: Combo del día" />
+          </label>
+
+          <label class="menu-field promotion-field promotion-price-field" for="promotionPrice">
+            <span>Precio o detalle</span>
+            <input id="promotionPrice" type="text" name="promotionPrice" placeholder="Ejemplo: Desde $12.000" />
+          </label>
+
+          <label class="menu-field promotion-field promotion-image-field" for="promotionImage">
+            <span>Imagen o ruta (opcional)</span>
+            <input
+              id="promotionImage"
+              type="text"
+              name="promotionImage"
+              placeholder="./images/promocion.jpg o una URL"
+            />
+          </label>
+
+          <label class="menu-field promotion-field promotion-description-field" for="promotionDescription">
+            <span>Descripción</span>
+            <textarea
+              id="promotionDescription"
+              name="promotionDescription"
+              placeholder="Describe la promoción para que el cliente la entienda rápido"
+            ></textarea>
+          </label>
+
+          <button class="btn btn-solid full-width promotion-submit" type="submit">
+            Agregar promoción
+          </button>
+        </form>
+
+        <p class="promotion-status" id="promotionStatus" aria-live="polite"></p>
+      </section>
     </section>
   </div>
 
   <script src="./script.js"></script>
 </body>
-</html>s
+</html>
